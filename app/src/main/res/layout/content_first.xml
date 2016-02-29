@@ -49,4 +49,12 @@
         android:text="NOTIFY"
         android:textColor="@android:color/white"
         android:textStyle="bold" />
+
+    <TextView
+        android:id="@+id/done"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_below="@+id/btnNotify"
+        android:text="view loaded"
+        android:visibility="gone" />
 </RelativeLayout>

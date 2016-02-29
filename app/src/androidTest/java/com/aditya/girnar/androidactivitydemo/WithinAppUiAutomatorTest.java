@@ -27,11 +27,10 @@ import static org.junit.Assert.assertThat;
  */
 @RunWith(AndroidJUnit4.class)
 @SdkSuppress(minSdkVersion = 18)
-public class GeneralUiAutomatorTest {
+public class WithinAppUiAutomatorTest {
     private static final String BASIC_SAMPLE_PACKAGE
             = "com.aditya.girnar.androidactivitydemo";
     private static final int LAUNCH_TIMEOUT = 5000;
-    private static final String STRING_TO_BE_TYPED = "UiAutomator";
     private UiDevice mDevice;
 
     @Before

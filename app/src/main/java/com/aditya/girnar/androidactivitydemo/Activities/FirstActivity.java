@@ -6,7 +6,6 @@ import android.app.TaskStackBuilder;
 import android.content.Context;
 import android.content.Intent;
 import android.os.Bundle;
-import android.provider.Settings;
 import android.support.design.widget.FloatingActionButton;
 import android.support.design.widget.Snackbar;
 import android.support.v4.app.NotificationCompat;
@@ -17,6 +16,7 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.EditText;
+import android.widget.TextView;
 import android.widget.Toast;
 
 import com.aditya.girnar.androidactivitydemo.R;
@@ -25,6 +25,7 @@ import com.aditya.girnar.androidactivitydemo.Receivers.NotificationBroadcastRece
 public class FirstActivity extends AppCompatActivity {
 
     private EditText username, password;
+    private TextView tvLoaded;
     public static int count = 1;
     NotificationCompat.InboxStyle inboxStyle;
 
@@ -37,7 +38,7 @@ public class FirstActivity extends AppCompatActivity {
         setSupportActionBar(toolbar);
         username = (EditText) findViewById(R.id.username);
         password = (EditText) findViewById(R.id.password);
-
+        tvLoaded = (TextView) findViewById(R.id.done);
         FloatingActionButton fab = (FloatingActionButton) findViewById(R.id.fab);
         fab.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -58,7 +59,19 @@ public class FirstActivity extends AppCompatActivity {
             Toast.makeText(this, "Wrong username or password", Toast.LENGTH_SHORT).show();
     }
 
+    private void loadTestingView() {
+        tvLoaded.postDelayed(new Runnable() {
+            @Override
+            public void run() {
+                tvLoaded.setVisibility(View.VISIBLE);
+            }
+        }, 1000 * 5);
+    }
+
+
     public void notify(View view) {
+        loadTestingView();
+
         NotificationCompat.Builder mBuilder =
                 new NotificationCompat.Builder(this)
                         .setSmallIcon(R.drawable.whatsapp)
