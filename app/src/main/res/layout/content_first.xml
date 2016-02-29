@@ -17,8 +17,7 @@
         android:id="@+id/username"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:hint="Username"
-        android:text="aditya" />
+        android:hint="Username" />
 
     <EditText
         android:id="@+id/password"
@@ -26,8 +25,7 @@
         android:layout_height="wrap_content"
         android:layout_below="@id/username"
         android:hint="Password"
-        android:inputType="textPassword"
-        android:text="breakingbad" />
+        android:inputType="textPassword" />
 
     <Button
         android:id="@+id/btnSubmit"
